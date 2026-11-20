@@ -2,7 +2,7 @@
 
 A graphical desktop application built with **Python (Tkinter)** to extract text from books or documents in **PDF** (or **CSV**) format, automatically rate their vocabulary richness on a **5-star scale**, and run **15 lexical and statistical analyses**.
 
-> **Note:** The application's user interface is in **French**. In the sections below, all button labels and their corresponding explanations are kept in French to match the interface directly.
+> **Note:** The application's user interface is in **French**. In the reference section below, all button labels are kept in French to match the interface, accompanied by their English explanations.
 
 ---
 
@@ -84,20 +84,16 @@ Using a local virtual environment (`.venv`) avoids conflicts with system-managed
 
 ## 📖 Usage Guide
 
-1. At the top right of the window, import a document using one of the two import buttons:
-   * **📂 Importer un PDF** : *ouvre l'explorateur de fichiers pour sélectionner un document PDF et en extraire automatiquement tous les mots page par page.*
-   * **📄 Importer un CSV** : *permet de charger directement un fichier CSV contenant une liste de mots déjà extraits lors d'une session précédente.*
+1. At the top right of the window, click **📂 Importer un PDF** to select a PDF book, or **📄 Importer un CSV** to load a previously extracted word list.
 2. Wait while the words are extracted (the progress bar indicates loading progress).
-3. Once loaded, the **star rating** and **quick summary** appear at the top, and a complete report is printed in the results area on the right:
-   * **Effacer** : *vide intégralement la console des résultats affichés à droite.*
-4. Before running specific analyses, you can customize the input parameters on the left panel:
-   * **Top N fréquents** : *permet de choisir le nombre de mots à afficher dans le classement des mots les plus utilisés (utilisé par le bouton 7).*
-   * **Longueur exacte (n°9)** : *définit le nombre précis de lettres recherché pour le comptage du bouton 9.*
-   * **Min. palindrome (n°15)** : *fixe la longueur minimale (en nombre de lettres) des palindromes à afficher avec le bouton 15.*
-   * **Mot précis (n°6)** : *champ de saisie permettant d'entrer un mot précis dont on souhaite connaître le nombre d'apparitions via le bouton 6.*
-5. Click any analysis button (**0** to **15**) in the left panel to display its output (see the French descriptions below).
-6. To save the extracted word list for future use, click the export button at the top right:
-   * **💾 Exporter en CSV** : *enregistre l'ensemble des mots extraits du livre dans un fichier CSV réutilisable.*
+3. Once loaded, the **star rating** and **quick summary** appear at the top, and a complete report is printed in the results console on the right (click **Effacer** at any time to clear the output console).
+4. Before running specific analyses, you can adjust the input parameters in the left panel:
+   * **Top N fréquents**: sets how many top words are displayed in the frequency ranking (button **7**).
+   * **Longueur exacte (n°9)**: sets the exact character count to search for (button **9**).
+   * **Min. palindrome (n°15)**: sets the minimum character length for detected palindromes (button **15**).
+   * **Mot précis (n°6)**: text field to look up the exact occurrence count of a specific word (button **6**).
+5. Click any analysis button (**0** to **15**) in the left panel to display its result on the right.
+6. Click **💾 Exporter en CSV** at the top right to save the extracted word list for future reuse.
 
 ---
 
@@ -115,28 +111,39 @@ The global score (**1 to 5 stars**) awards 1 point for each of the following cri
 
 ---
 
-## 📊 Analysis Buttons Reference (French UI)
+## 📊 Buttons Reference
 
-Below are the exact buttons available in the left panel along with their explanations in French:
+Below are all the buttons available in the interface (in French) along with their explanations in English:
 
-| Bouton | Explication |
+### Action & Utility Buttons
+
+| Button (French UI) | Explanation |
 | :--- | :--- |
-| **📊 Tout afficher (Bilan complet 1-15)** | *Affiche d'un seul coup la note en étoiles ainsi que le résumé complet de toutes les statistiques principales du document.* |
-| **1. Nombre total de mots** | *Compte et affiche le nombre total de mots extraits dans l'ensemble du document.* |
-| **2. Nombre de mots soutenus** | *Compte combien de fois des mots appartenant au registre soutenu apparaissent dans le texte.* |
-| **3. Proportion de mots soutenus (%)** | *Calcule le pourcentage que représentent les mots soutenus par rapport au nombre total de mots.* |
-| **4. Nombre de mots rares** | *Compte combien de fois des mots rares ou littéraires apparaissent dans le texte.* |
-| **5. Proportion de mots rares (%)** | *Calcule le pourcentage que représentent les mots rares par rapport au nombre total de mots.* |
-| **6. Fréquence d'un mot / aperçu** | *Affiche le nombre d'occurrences du mot saisi dans le champ « Mot précis » (ou un aperçu des 30 premiers mots du dictionnaire si le champ est vide).* |
-| **7. Top N mots les plus fréquents** | *Classe et affiche les N mots les plus utilisés dans le livre (selon la valeur réglée dans « Top N fréquents »).* |
-| **8. Nombre de mots distincts** | *Indique le nombre de mots différents (vocabulaire unique, sans les répétitions) utilisés dans l'œuvre.* |
-| **9. Mots de longueur demandée** | *Compte le nombre de mots possédant exactement le nombre de lettres défini dans « Longueur exacte ».* |
-| **10. Longueur moyenne des mots** | *Calcule le nombre moyen de caractères par mot sur l'ensemble du texte.* |
-| **11. Nombre de mots longs (≥ 7)** | *Compte tous les mots composés de 7 caractères ou plus.* |
-| **12. Nombre de mots courts (≤ 4)** | *Compte tous les mots composés de 4 caractères ou moins.* |
-| **13. Richesse lexicale (%)** | *Calcule le taux de variété du vocabulaire selon la formule `(mots distincts / total des mots) × 100`.* |
-| **14. Test Pangramme (A-Z)** | *Vérifie si toutes les lettres de l'alphabet de A à Z sont présentes au moins une fois dans le texte.* |
-| **15. Liste des palindromes** | *Recherche et affiche tous les palindromes uniques (mots qui se lisent dans les deux sens) ayant au moins la taille définie dans « Min. palindrome ».* |
+| **📂 Importer un PDF** | Opens the file explorer to select a PDF document and automatically extract all its words page by page. |
+| **📄 Importer un CSV** | Loads a CSV file containing a list of words already extracted during a previous session. |
+| **💾 Exporter en CSV** | Saves all words extracted from the book into a reusable CSV file. |
+| **Effacer** | Clears the entire results display area on the right. |
+
+### Analysis Buttons (Left Panel)
+
+| Button (French UI) | Explanation |
+| :--- | :--- |
+| **📊 Tout afficher (Bilan complet 1-15)** | Displays the star rating along with a complete summary of all the document's main statistics at once. |
+| **1. Nombre total de mots** | Counts and displays the total number of words extracted from the entire document. |
+| **2. Nombre de mots soutenus** | Counts how many times words belonging to the formal register appear in the text. |
+| **3. Proportion de mots soutenus (%)** | Calculates the percentage of formal words relative to the total word count. |
+| **4. Nombre de mots rares** | Counts how many times rare or literary words appear in the text. |
+| **5. Proportion de mots rares (%)** | Calculates the percentage of rare words relative to the total word count. |
+| **6. Fréquence d'un mot / aperçu** | Displays the occurrence count of the word entered in the "Mot précis" field (or a preview of the first 30 dictionary entries if the field is empty). |
+| **7. Top N mots les plus fréquents** | Ranks and displays the top *N* most frequently used words in the book (based on the value set in "Top N fréquents"). |
+| **8. Nombre de mots distincts** | Shows the number of different words (unique vocabulary, excluding duplicates) used in the work. |
+| **9. Mots de longueur demandée** | Counts the number of words that have the exact character length specified in "Longueur exacte". |
+| **10. Longueur moyenne des mots** | Calculates the average number of characters per word across the entire text. |
+| **11. Nombre de mots longs (≥ 7)** | Counts all words made up of 7 or more characters. |
+| **12. Nombre de mots courts (≤ 4)** | Counts all words made up of 4 or fewer characters. |
+| **13. Richesse lexicale (%)** | Calculates the vocabulary variety rate using the formula `(unique words / total words) × 100`. |
+| **14. Test Pangramme (A-Z)** | Checks whether every letter of the alphabet from A to Z appears at least once in the text. |
+| **15. Liste des palindromes** | Finds and displays all unique palindromes (words that read the same backward and forward) that are at least as long as the value set in "Min. palindrome". |
 
 ---
 
